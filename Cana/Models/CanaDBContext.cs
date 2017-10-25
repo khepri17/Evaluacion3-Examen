@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Cana.Models
 {
-    public class CanaDBContext
+    public class CanaDBContext:DbContext
     {
         public DbSet<Condena> Condenas { get; set; }
         public DbSet<Delito> Delitos { get; set; }
