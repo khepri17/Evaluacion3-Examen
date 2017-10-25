@@ -132,6 +132,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CanaDBContext.cs" />
+    <Compile Include="Models\Condena.cs" />
+    <Compile Include="Models\Delito.cs" />
+    <Compile Include="Models\Juez.cs" />
+    <Compile Include="Models\Preso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
