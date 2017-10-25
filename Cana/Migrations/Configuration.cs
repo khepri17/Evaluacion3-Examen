@@ -1,5 +1,6 @@
 namespace Cana.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,14 @@ namespace Cana.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Delitos.AddOrUpdate(x => x.ID,
+                new Delito() { ID = 1 ,Nombre = "Homicidio", CondenaMinima = 5, CondenaMaxima = 50},
+                new Delito() { ID = 2, Nombre = "Femicidio", CondenaMinima = 5, CondenaMaxima = 50 },
+                new Delito() { ID = 3, Nombre = "Robo con intimidacion", CondenaMinima = 1, CondenaMaxima = 12 },
+                new Delito() { ID = 4, Nombre = "Robo en lugar no habitado", CondenaMinima = 1, CondenaMaxima = 5 },
+                new Delito() { ID = 5, Nombre = "Cohecho", CondenaMinima = 5, CondenaMaxima = 8 }
+
+                );
         }
     }
 }
