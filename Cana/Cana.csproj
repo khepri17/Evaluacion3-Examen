@@ -148,6 +148,7 @@
     <Compile Include="Controllers\CondenasController.cs" />
     <Compile Include="Controllers\DelitosController.cs" />
     <Compile Include="Controllers\JuezesController.cs" />
+    <Compile Include="Controllers\PresosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
