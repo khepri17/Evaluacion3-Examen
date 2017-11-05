@@ -35,6 +35,14 @@ namespace Cana.Migrations
                 new Delito() { ID = 5, Nombre = "Cohecho", CondenaMinima = 5, CondenaMaxima = 8 }
 
                 );
+            context.Juezes.AddOrUpdate(x => x.ID,
+                new Juez() { ID = 1, Nombre = "Miguel", Domicilio = "Los Toros", Rut= "19035559-4", Sexo=1}
+                );
+            context.Presos.AddOrUpdate(x => x.ID,
+                new Preso() {ID = 1, Nombre="Alvaro",Apellido ="Catrivil", Rut="13347875-4",Sexo =1,FechaNacimiento = System.DateTime.Parse("10/12/1989 13:33"),Domicilio = "Ejemplo" }
+            );
+
+
         }
     }
 }
