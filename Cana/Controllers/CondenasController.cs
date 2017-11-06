@@ -51,13 +51,53 @@ namespace Cana.Controllers
         //metodo agregar condena¿'¿'¿'¿'
         public IHttpActionResult post(Condena condena)
         {
-            context.Condenas.Add(condena);
-            int filasAfectadas = context.SaveChanges();
-            if (filasAfectadas == 0)
+            try
             {
-                return InternalServerError();//error 500
+                foreach (var item in condena.Delitos)
+                {
+
+                    Delito verificador = null;
+                    verificador = context.Delitos.Find(item.ID);
+                    if (verificador == null)
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        if (item.CondenaMinima >= verificador.CondenaMinima && item.CondenaMinima <= verificador.CondenaMaxima)
+                        {
+                            if (item.CondenaMaxima >= verificador.CondenaMinima && item.CondenaMaxima <= verificador.CondenaMaxima)
+                            {
+
+                            }
+                            else
+                            {
+                                return InternalServerError();
+                            }
+                        }
+                        else
+                        {
+                            return InternalServerError();
+                        }
+                    }
+
+                }
+                context.Condenas.Add(condena);
+                int filasAfectadas = context.SaveChanges();
+                if (filasAfectadas == 0)
+                {
+                    return InternalServerError();//error 500
+                }
+                return Ok(new { Mensaje = "Condena agregada de forma correcta" });
+
+
             }
-            return Ok(new { Mensaje = "Condena agregada de forma correcta" });
+            catch (Exception)
+            {
+
+                return InternalServerError();
+            }
+
         }
 
 
