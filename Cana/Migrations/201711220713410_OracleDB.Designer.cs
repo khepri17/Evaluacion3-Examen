@@ -6,14 +6,14 @@ namespace Cana.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class MigracionPrimaria : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
+    public sealed partial class OracleDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigracionPrimaria));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(OracleDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710250418521_MigracionPrimaria"; }
+            get { return "201711220713410_OracleDB"; }
         }
         
         string IMigrationMetadata.Source

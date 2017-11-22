@@ -92,6 +92,14 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
       <Private>True</Private>
@@ -154,13 +162,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710250418521_MigracionPrimaria.cs" />
-    <Compile Include="Migrations\201710250418521_MigracionPrimaria.Designer.cs">
-      <DependentUpon>201710250418521_MigracionPrimaria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711220624120_UsuariosAgregados.cs" />
-    <Compile Include="Migrations\201711220624120_UsuariosAgregados.Designer.cs">
-      <DependentUpon>201711220624120_UsuariosAgregados.cs</DependentUpon>
+    <Compile Include="Migrations\201711220713410_OracleDB.cs" />
+    <Compile Include="Migrations\201711220713410_OracleDB.Designer.cs">
+      <DependentUpon>201711220713410_OracleDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CanaDBContext.cs" />
@@ -184,13 +188,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710250418521_MigracionPrimaria.resx">
-      <DependentUpon>201710250418521_MigracionPrimaria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711220624120_UsuariosAgregados.resx">
-      <DependentUpon>201711220624120_UsuariosAgregados.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711220713410_OracleDB.resx">
+      <DependentUpon>201711220713410_OracleDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

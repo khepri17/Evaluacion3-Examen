@@ -15,9 +15,9 @@ namespace Cana.Models
         //Campo unico y tendra un largo maximo de 20 caracteres
         [Index(IsUnique = true), MaxLength(20)]
         public string UserName { get; set; }
-
+        [MaxLength(50)]
         public string Password { get; set; }
-
+        [MaxLength(200)]
         public string Token { get; set; }
     }
 }

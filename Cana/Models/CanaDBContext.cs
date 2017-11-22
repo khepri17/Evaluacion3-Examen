@@ -13,5 +13,10 @@ namespace Cana.Models
         public DbSet<Juez> Juezes { get; set; }
         public DbSet<Preso> Presos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("clientes");
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
