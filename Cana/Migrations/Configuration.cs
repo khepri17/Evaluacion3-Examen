@@ -42,6 +42,9 @@ namespace Cana.Migrations
                 new Preso() {ID = 1, Nombre="Alvaro",Apellido ="Catrivil", Rut="13347875-4",Sexo =1,FechaNacimiento = System.DateTime.Parse("10/12/1989 13:33"),Domicilio = "Ejemplo" }
             );
 
+            context.Usuarios.AddOrUpdate(u => u.UserName,
+                new Models.Usuario() {UserName = "admin",Password="admin"},
+                new Models.Usuario() {UserName ="miguel",Password="1234" });
 
         }
     }

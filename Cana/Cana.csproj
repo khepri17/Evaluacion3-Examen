@@ -145,9 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthenticationFilter.cs" />
     <Compile Include="Controllers\CondenasController.cs" />
     <Compile Include="Controllers\DelitosController.cs" />
     <Compile Include="Controllers\JuezesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PresosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,12 +158,18 @@
     <Compile Include="Migrations\201710250418521_MigracionPrimaria.Designer.cs">
       <DependentUpon>201710250418521_MigracionPrimaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711220624120_UsuariosAgregados.cs" />
+    <Compile Include="Migrations\201711220624120_UsuariosAgregados.Designer.cs">
+      <DependentUpon>201711220624120_UsuariosAgregados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CanaDBContext.cs" />
     <Compile Include="Models\Condena.cs" />
     <Compile Include="Models\Delito.cs" />
     <Compile Include="Models\Juez.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Preso.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,6 +188,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710250418521_MigracionPrimaria.resx">
       <DependentUpon>201710250418521_MigracionPrimaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220624120_UsuariosAgregados.resx">
+      <DependentUpon>201711220624120_UsuariosAgregados.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

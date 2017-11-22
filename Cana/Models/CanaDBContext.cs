@@ -12,5 +12,6 @@ namespace Cana.Models
         public DbSet<Delito> Delitos { get; set; }
         public DbSet<Juez> Juezes { get; set; }
         public DbSet<Preso> Presos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

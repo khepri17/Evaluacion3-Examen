@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace Cana.Controllers
 {
+    [AuthenticationFilter]
     public class DelitosController : ApiController
     {
         private CanaDBContext context;
