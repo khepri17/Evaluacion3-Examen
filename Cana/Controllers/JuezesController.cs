@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Cana.Controllers
 {
@@ -55,15 +56,28 @@ namespace Cana.Controllers
         //metodo agregar juez
         public IHttpActionResult post(Juez juez)
         {
-            context.Juezes.Add(juez);
-            int filasAfectadas = context.SaveChanges();
+            
+            
 
-            if (filasAfectadas == 0)
+            try
             {
-                return InternalServerError();//error 500
+                //declaracion de parametros
+                OracleParameter param1 = new OracleParameter("nombre_juez", juez.Nombre);
+                OracleParameter param2 = new OracleParameter("rut_juez", juez.Rut);
+                OracleParameter param3 = new OracleParameter("sexo", juez.Sexo);
+                OracleParameter param4 = new OracleParameter("direccion", juez.Domicilio);
+                context.
+                    Database.
+                     ExecuteSqlCommand("begin sp_agregar_juez(:nombre_juez,:rut_juez ,:sexo ,:direccion); end;", param1, param2, param3, param4);
+
+                return Ok(new{Mensaje = "Juez Agregado Correctamente" });
+            }
+            catch (Exception)
+            {
+
+                return InternalServerError();
             }
 
-            return Ok(new { Mensaje = "Juez agregado de forma correcta" });
         }
 
         //metodo eliminar juez
