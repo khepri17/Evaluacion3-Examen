@@ -46,12 +46,26 @@ namespace Cana.Controllers
         // retornar solo un juez 
         public IHttpActionResult get(int id)
         {
-            Juez juez = context.Juezes.Find(id);
-            if (juez == null)
+            
+
+            try
             {
-                return NotFound();//404
+                OracleParameter param1 = new OracleParameter("id_juez", id);
+                OracleParameter param2 = new OracleParameter("listado",
+                    OracleDbType.RefCursor, System.Data.ParameterDirection.Output);
+
+                Juez juez =
+                    context.
+                        Database.
+                        SqlQuery<Juez>("begin sp_buscar_juez(:id_juez, :listado); end;",
+                        param1, param2).First();
+                return Ok(juez);
             }
-            return Ok(juez);//retornamos codigo 200 + juez buscado
+            catch (Exception)
+            {
+
+                return NotFound();
+            }
         }
         //metodo agregar juez
         public IHttpActionResult post(Juez juez)
